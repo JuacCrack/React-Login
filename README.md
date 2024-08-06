@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Login React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Descripción
 
-In the project directory, you can run:
 
-### `npm start`
+Este es un proyecto de aplicación de inicio de sesión y registro utilizando React. El proyecto incluye funcionalidades para el login, registro de nuevos usuarios, recuperación de contraseña y cambio de contraseña, todo del lado del cliente. El diseño es responsive y utiliza Bootstrap 5 para la interfaz de usuario.
+ 
+## Estructura del Proyecto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La estructura del proyecto es la siguiente:
+ 
+    login-react/
 
-### `npm test`
+    ├── node_modules/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ├── public/
 
-### `npm run build`
+    │   ├── index.html
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    │   └── ...
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ├── src/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    │   ├── components/
 
-### `npm run eject`
+    │   │   ├── ChangePassword.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    │   │   ├── Login.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    │   │   ├── RecoverPassword.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    │   │   └── Register.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    │   ├── utils/
 
-## Learn More
+    │   │   └── cookies.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    │   ├── App.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    │   ├── index.js
 
-### Code Splitting
+    │   └── ...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ├── package.json
 
-### Analyzing the Bundle Size
+    ├── package-lock.json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    └── ...
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Componentes
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Login.js
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+El componente de Login incluye un formulario con campos para el correo y la contraseña. Realiza validaciones `onInput` y verifica las credenciales contra los usuarios guardados en las cookies. Muestra un modal en caso de error e incluye botones para navegar a recuperación de contraseña o registro.
 
-### `npm run build` fails to minify
+### Register.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+El componente de Registro permite a los usuarios crear una cuenta con validaciones en `onInput` usando Bootstrap. Verifica si el correo ya está registrado y, si no, guarda el nuevo usuario en las cookies. Muestra un modal de éxito o error según sea necesario.
+
+### RecoverPassword.js
+
+
+El componente de Recuperación de Contraseña permite a los usuarios ingresar su correo para recibir un código de verificación. Simula el envío del código, cambia el botón a "Validar Código", y verifica el código ingresado. Muestra un modal de éxito o error y navega a la sección de cambio de contraseña si el código es correcto.
+
+### ChangePassword.js
+
+
+El componente de Cambio de Contraseña permite a los usuarios actualizar su contraseña con validaciones en `onInput`. Verifica que la nueva contraseña cumpla con los requisitos y que coincida con la confirmación. Actualiza la contraseña en las cookies y muestra un modal de éxito.
+
+## Utilidades
+
+
+### cookies.js
+
+
+Contiene funciones para gestionar los usuarios en las cookies, incluyendo la obtención de usuarios, la actualización de contraseñas y la gestión del usuario actual.
+
+## Instalación
+
+
+Para instalar las dependencias del proyecto, usa el siguiente comando:
+ 
+    npm install
+
+
+## Uso
+
+
+Para iniciar la aplicación en modo de desarrollo, usa:
+ 
+    npm start
+
+
+La aplicación estará disponible en http://localhost:3000.
+
+# Gracias por leer!
